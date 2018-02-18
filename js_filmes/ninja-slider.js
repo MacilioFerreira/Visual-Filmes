@@ -1,23 +1,20 @@
 
-var nsOptions =
-{
+var nsOptions = {
     sliderId: "ninja-slider",
     transitionType: "slide",
     autoAdvance: true,
-    rewind: false,
-    delay: "default",
-    transitionSpeed: "default",
-    aspectRatio: "9:6", // "?:100%" is for responsive scaling based on window height
+    rewind: true,
+    delay: "default", //or integer value such as: 3500
+    transitionSpeed: "default", //eg. 500, 1200, or "default"
+    aspectRatio: "9:6",
     initSliderByCallingInitFunc: false,
     shuffle: false,
-    startSlideIndex: 0,
+    startSlideIndex: 0, //0-based
     navigateByTap: true,
-    pauseOnHover: false,
     keyboardNav: true,
     before: null,
     license: "mylicense"
 };
-
 var nslider = new NinjaSlider(nsOptions);
 
 /* Ninja Slider v2016.12.29 Copyright www.menucool.com */
