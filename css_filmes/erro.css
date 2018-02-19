@@ -1,0 +1,11 @@
+#texto{
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24pt;
+    color: white;
+}

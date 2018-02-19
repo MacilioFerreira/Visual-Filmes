@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link type="text/css" href="css_filmes/erro.css" rel="stylesheet" />
+        <link type="text/css" href="css_filmes/cabecalho.css" rel="stylesheet" />
+        
+        <title> Erro </title>
+
+    </head>
+    <body>
+
+        <nav class="nav-extended">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo" id="logo">MFilmes</a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li id="item1">
+                            <a href="resultado_busca.html" onclick="buscarGenero('Action')">Ação</a> 
+                        </li>
+                        <li id="item2">
+                            <a href="resultado_busca.html" onclick="buscarGenero('Comedy')" >Comédia</a>
+                        </li>
+                        <li id="item3">
+                            <a href="resultado_busca.html" onclick="buscarGenero('Romance')" >Romance</a>
+                        </li>
+                        <li id="item4">
+                            <a href="resultado_busca.html" onclick="buscarGenero('Drama')" >Drama</a>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <form>
+                                    <div class="container-4">
+                                            <input type="search" id="search" name="q" placeholder="Gênero"/>
+                                            <label class="label-icon" ><i class="material-icons right">search</i></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        <div id="texto">
+            <h1>Não foi encontrado nenhum filme para esse gênero!!! </h1>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="js_filmes/filmes.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    
+    </body>
+</html>

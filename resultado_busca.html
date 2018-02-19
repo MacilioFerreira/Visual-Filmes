@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,38 +9,26 @@
 
         <link type="text/css" href="css_filmes/filmes.css" rel="stylesheet" />
         <link type="text/css" href="css_filmes/cabecalho.css" rel="stylesheet" />
-
-        <link href="css_filmes/ninja-slider.css" rel="stylesheet" />
-        <script src="js_filmes/ninja-slider.js" type="text/javascript"></script>
         
-        <title> MFilmes </title>
+        <title> Resultado </title>
     </head>
     <body>
-
-        <!-- <ul id="dropdown1" class="dropdown-content">
-            <li><a href="" id="item1"> Ano de Lançamento </a></li>
-            <li class="divider"></li>
-            <li><a href="" id="item2">Nota</a></li>
-            <li class="divider"></li>
-            <li><a href="" id="item3">Ordem Alfabética</a></li>            
-        </ul>
-        <li><a class="dropdown-button" data-activates="dropdown1" id="drop">Ordenar por:<i class="material-icons right"></i></a></li> -->
 
         <nav class="nav-extended">
             <div class="nav-wrapper">
                 <a href="index.html" class="brand-logo" id="logo">MFilmes</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li id="item1">
-                        <a href="resultado_busca.html" onclick="buscarGenero('Action')">Ação</a> 
+                        <a href="javascript:void(0)" onclick="buscarGenero('Action')">Ação</a> 
                     </li>
                     <li id="item2">
-                        <a href="resultado_busca.html" onclick="buscarGenero('Comedy')" >Comédia</a>
+                        <a href="javascript:void(0)" onclick="buscarGenero('Comedy')" >Comédia</a>
                     </li>
                     <li id="item3">
-                        <a href="resultado_busca.html" onclick="buscarGenero('Romance')" >Romance</a>
+                        <a href="javascript:void(0)" onclick="buscarGenero('Romance')" >Romance</a>
                     </li>
                     <li id="item4">
-                        <a href="resultado_busca.html" onclick="buscarGenero('Drama')" >Drama</a>
+                        <a href="javascript:void(0)" onclick="buscarGenero('Drama')" >Drama</a>
                     </li>
                     <li>
                         <div class="box">
@@ -56,19 +44,13 @@
             </div>
         </nav>
 
-        <div id="ninja-slider">
-            <div class="slider-inner">
-                <ul id="slides"></ul>
-            </div>
+        <div class="container-fluid">
+            <div class="row" id="listaResultante"> </div>
         </div>
 
-        <div class="container-fluid">
-            <div class="row" id="lista"> </div>
-        </div>
-        
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="js_filmes/filmes.js"></script>
+        <script type="text/javascript" src="js_filmes/busca.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
+
     </body>
 </html>
