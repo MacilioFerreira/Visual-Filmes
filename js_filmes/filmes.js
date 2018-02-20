@@ -1,17 +1,18 @@
-//altera o método de sincronização
 $.ajaxSetup({
     async: false
 });
 
 var filmes = [];
-var lista_filmes_plus = [];
 
 $(document).ready(function(){
-    
-    //Inicia a transição dos slides AIzaSyCopyEuCquSsseOEva1HzAW6Z_b1RXwX60
+
     $('.slider').slider({
         full_width: true,
         interval: 7000
+    });
+
+    $('#slides').click( function(e) {
+        detalhesFilme();
     });
 
     $('#search').keydown(function(event) {
@@ -33,7 +34,7 @@ $(document).ready(function(){
             var imagem = getImagem(elemento.title, elemento.release_date);
             if(sliders < 5 && !filmes.includes(elemento)){
                 if(imagem){
-                    $('#slides').append('<li><img class="ns-img" src="'+imagem+'"></img></li>');
+                    $('#slides').append('<li><img id="sliderImg" class="ns-img" src="'+imagem+'"></img></li>');
                 }else{
                     $('#slides').append('<li><img src="images/movie-play-button.png" height=250px width=200px> </img></li>');
                 }
@@ -42,17 +43,15 @@ $(document).ready(function(){
             }else{
                 if(!filmes.includes(elemento)){
                     filmes.push(elemento);
-    
-                    var nota_imagem = parseInt(elemento.rt_score) >= 70 ? '<label id="imgNota"><i class="material-icons small">star</i></label>'+'<h6 id="textNota">'+elemento.rt_score+'</h6>' : '<label id="imgNota2"><i class="material-icons small">star</i></label>'+'<h6 id="textNota">'+elemento.rt_score+'</h6>';
                     
                     var div_img_padrao = '<div class="col-sm-10"> <h5 id="titulo"> <span> ' +elemento.title
                     +' </span> </h5> <img src="images/movie-play-button.png" height=250px width=200px> </img>'
                     +'<p id="descricao">'+elemento.description+'</p> <h6 id="dataLancamento"> <span> Lançamento: </span>' + elemento.release_date +'</h6>'
-                    +'<h6 id="diretor"> <span> Diretor: </span> ' + elemento.director +' </h6>'+ nota_imagem + '</div>';
+                    +'<h6 id="diretor"> <span> Diretor: </span> ' + elemento.director +' </div>';
                     
                     var div_img_poster = '<div class="col-sm-10"> <h5 id="titulo"> <span> '+elemento.title+' </span> </h5> <img src="'+imagem+'" height=250px width=200px> </img>'
                     +'<p id="descricao">'+elemento.description+'</p> <h6 id="dataLancamento"> <span> Lançamento: </span>' + elemento.release_date +'</h6>'
-                    +'<h6 id="diretor"> <span> Diretor: </span> ' + elemento.director +' </h6>'+ nota_imagem + '</div>';
+                    +'<h6 id="diretor"> <span> Diretor: </span> ' + elemento.director +' </div>';
                     
                     if (imagem){
                         $('#lista').append(div_img_poster);
@@ -76,7 +75,6 @@ function getImagem(titulo, anoLancamento){
     })
     .done(function(data) {
         imagem = data.Poster;
-        lista_filmes_plus.push(data);
     })
     return imagem
 }
@@ -150,4 +148,16 @@ function buscarOutrosGeneros(genero){
 
     window.localStorage.setItem('argumentos', JSON.stringify(valores));
     window.location.href="resultado_busca.html";
+}
+
+
+function detalhesFilme(){  
+    var slider_img = $('#sliderImg').attr('src');  
+    var valores = {
+        'slider_img': slider_img,
+        'filmes': filmes
+    }
+
+    window.localStorage.setItem('argumentos', JSON.stringify(valores));
+    window.location.href="detalhes_filme.html";
 }

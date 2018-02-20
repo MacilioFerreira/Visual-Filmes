@@ -1,4 +1,3 @@
-//altera o método de sincronização
 $.ajaxSetup({
     async: false
 });
@@ -29,12 +28,9 @@ $(document).ready(function(){
         .done(function(filme) {
             if(filme.Genre.includes(genero)){
 
-                var nota_imagem = parseInt(filme_.rt_score) >= 70 ? '<label id="imgNota1"><i class="material-icons small">star</i></label>'+'<h6 id="textNota">'+filme_.rt_score+'</h6>' : '<label id="imgNota2"><i class="material-icons small">star</i></label>'+'<h6 id="textNota">'+elemento.rt_score+'</h6>';
-
                 var div = '<div class="col-sm-10"> <h5 id="titulo"> <span> '+filme_.title+' </span> </h5> <img src="'+filme.Poster+'" height=250px width=200px> </img>'
                 +'<p id="descricao">'+filme_.description+'</p> <h6 id="dataLancamento"> <span> Lançamento: </span>' + filme_.release_date +'</h6>'
-                +'<h6 id="diretor"> <span> Diretor: </span> ' + filme_.director +' </h6>'+ nota_imagem + '</div>';
-
+                +'<h6 id="diretor"> <span> Diretor: </span> ' + filme_.director +' </div>';
                 
                 $('#listaResultante').append(div);
                 cont += 1;
@@ -55,7 +51,6 @@ function getImagem(titulo, anoLancamento){
     })
     .done(function(data) {
         imagem = data.Poster;
-        lista_filmes_plus.push(data);
     })
     return imagem
 }
@@ -83,24 +78,32 @@ function buscarGenero(genero){
 function buscarOutrosGeneros(genero){
     var genero_en = null;
     var lista = [
-            'Suspense',
-            'Crime',
-            'Aventura',
-            'Mistério',
-            'Horror',
-            'Ficção científica',
-            'Fantasia',
-            'Animação',
-            'Esporte',
-            'Biografia',
-            'Família',
-            'Música',
-            'Guerra',
-            'Curto',
-            'Ocidental'
+        'Comédia',
+        'Romance',
+        'Ação',
+        'Drama',
+        'Suspense',
+        'Crime',
+        'Aventura',
+        'Mistério',
+        'Horror',
+        'Ficção científica',
+        'Fantasia',
+        'Animação',
+        'Esporte',
+        'Biografia',
+        'Família',
+        'Música',
+        'Guerra',
+        'Curto',
+        'Ocidental'
     ]
 
     var lista_generos = [
+        'Comedy',
+        'Romance',
+        'Action',
+        'Drama',
         'Thriller',
         'Crime',
         'Adventure',
